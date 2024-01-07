@@ -1,5 +1,11 @@
-# qrcode-vue
+# QRCode Generator
+O projeto consiste em um gerador de QRCode utilizando Vue.js e a biblioteca QRious.
 
+Deploy: https://qrcode-vuejs.surge.sh/
+
+#
+#
+# Info:
 ## Project setup
 ```
 yarn install
