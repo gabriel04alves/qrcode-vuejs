@@ -34,7 +34,7 @@
         height: 7vh;
         background-color: #002F40;
         border-top: 0.5vh solid;
-        border-image: linear-gradient(60deg, #A31621, #00A878) 1 1;
+        border-image: linear-gradient(60deg, #F0F757, #A31621) 1 1;
     }
     .text-footer {
         color: #F8F8F8;
@@ -46,6 +46,6 @@
     }
     .icons-footer {
         align-self: center;
-        width: 3.2vh;
+        /* width: 2vh; */
     }
 </style>
