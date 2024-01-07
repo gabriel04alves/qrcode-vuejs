@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="app-qrcode">
         <div class="input">
-            <p>	Digite o seu texto do seu <b> QRCode: </b> </p>
+            <p>	Digite o conteúdo do seu <b> QRCode: </b> </p>
            <input 
             type="text" 
             size="25" 
@@ -11,8 +11,9 @@
             >
 
         </div>
-        <div v-if="text">
-            <img class="qrcode" :src="newQRCode" alt="qrcode">
+        <div v-if="text" >
+            <img class="qrcode" :src="newQRCode" alt="qrcode" @click="downloadQRCode">
+            <p class="text-img">Clique sobre a imagem para baixar.</p>
         </div>
     </div>
 </template>
@@ -40,6 +41,12 @@
             generateQRCode() {
                 this.qrcode.value = this.text;
                 return this.qrcode.toDataURL();
+            },
+            downloadQRCode() {
+                const img = document.createElement('a');
+                img.href = this.newQRCode;
+                img.download = 'qrcode.png';
+                img.click();
             },
         },
     }
@@ -72,5 +79,12 @@
     }
     .qrcode{
         border: solid 0.2em #020202;
+        cursor: pointer;
+    }
+    .text-img {
+        font-size: 1.5vh;
+        font-weight: 300;
+        font-style: italic;
+        text-align: center;
     }
 </style>
