@@ -1,7 +1,7 @@
 <template>
     <div id="app" class="app-qrcode">
         <div class="input">
-            <p>	Digite o seu texto do seu <b> QRCode: </b> </p>
+            <p>	Digite o conteúdo do seu <b> QRCode: </b> </p>
            <input 
             type="text" 
             size="25" 
