@@ -1,11 +1,11 @@
 <template>
-    <div id="app" class="app-qrcode">
-        <div class="input">
+    <section d="app" class="app-qrcode">
+        <div class="input-container">
             <p>	Digite o conteúdo do seu <b> QRCode: </b> </p>
            <input 
             type="text" 
             size="25" 
-            placeholder="Digite o texto: " 
+            placeholder="Digite aqui o seu texto..." 
             :value="text"
             @input="onData"
             >
@@ -15,7 +15,7 @@
             <img class="qrcode" :src="newQRCode" alt="qrcode" @click="downloadQRCode">
             <p class="text-img">Clique sobre a imagem para baixar.</p>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -25,7 +25,7 @@
         name: 'ContentMain',
         data() {
             return {
-                text: 'https://github.com/gabriel04alves',
+                text: 'Digite aqui o seu texto...',
                 qrcode: new QRious({ size: 300 }),
             };
         },
@@ -56,35 +56,53 @@
     .app-qrcode {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 86vh;
-        gap: 5%;
+
+        padding: 4vh 3vh;
+        gap: 3vh;
+
+        font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+        color: #F8F8F8;
     }
-    .input {
+
+    .input-container {
         display: flex;
         align-items: center;
         flex-direction: column;
-        font-size: 2vh;
-        font-weight: 500;
-        width: 35vh;
+
+        font-size: 1.5rem;
+        font-weight: 400;   
     }
-    input{
+
+    input {
         width: 100%;
-        height: 5vh;
-        padding: 3%;
-        font-size: 1.8vh;
+        padding: 2vh;
+        
+        font-size: 2vh;
+        
         border-radius: 10px;
-        border: solid 0.2em #A31621;
+        border: none;
+        outline: none;
+
+        background-color: transparent;
+        color: #959595;
     }
-    .qrcode{
-        border: solid 0.2em #020202;
+
+    .qrcode {
+        border: solid 0.2em #F8F8F8;
         cursor: pointer;
     }
+
     .text-img {
-        font-size: 1.5vh;
+        font-size: 1.1rem;
         font-weight: 300;
         font-style: italic;
         text-align: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .qrcode {
+            width: 300px;
+        }
     }
 </style>
