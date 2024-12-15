@@ -1,4 +1,5 @@
 <template>
+
   <body>
     <Header></Header>
     <ContentMain></ContentMain>
@@ -30,6 +31,6 @@ export default {
 
 body {
   height: 100%;
-  background-color: #202020;
+  background-color: #253f4b;
 }
 </style>
